@@ -6,5 +6,9 @@ from bot.views import TelegramChatIDUpdateAPIView
 app_name = BotConfig.name
 
 urlpatterns = [
-    path('telegram-chat-id/', TelegramChatIDUpdateAPIView.as_view(), name='telegram_chat_id_update'),
+    path(
+        "telegram-chat-id/",
+        TelegramChatIDUpdateAPIView.as_view(),
+        name="telegram_chat_id_update",
+    ),
 ]

@@ -1,5 +1,6 @@
 from rest_framework.permissions import BasePermission
 
+
 class OwnerOrReadOnlyPerm(BasePermission):
     """Разрешает доступ всем пользователям"""
 
@@ -7,6 +8,7 @@ class OwnerOrReadOnlyPerm(BasePermission):
         if request.user.is_staff:
             return True
         return obj.user == request.user
+
 
 class OwnerOnlyPerm(BasePermission):
     """Разрешает доступ только владельцу"""

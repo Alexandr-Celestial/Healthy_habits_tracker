@@ -14,6 +14,7 @@ def send_telegram_reminder(user_id, message):
     except Exception as e:
         print(f"Возникла ошибка: {e}")
 
+
 @shared_task
 def send_daily_reminders():
     users = User.objects.filter(profile__telegram_chat_id__isnull=False)
