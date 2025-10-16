@@ -10,6 +10,7 @@ class UserSerializer(serializers.ModelSerializer):
         model = User
         fields = "__all__"
 
+
 class UserCreateSerializer(serializers.ModelSerializer):
     """Сериализатор для создания User"""
 
@@ -21,7 +22,6 @@ class UserCreateSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         user: User = User.objects.create(
-            email=validated_data["email"],
-            password=validated_data["password"]
+            email=validated_data["email"], password=validated_data["password"]
         )
         return user

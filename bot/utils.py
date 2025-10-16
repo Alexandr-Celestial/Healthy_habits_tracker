@@ -1,9 +1,8 @@
-import os
-
 import telegram
 from django.conf import settings
 
 bot = telegram.Bot(token=settings.TELEGRAM_BOT_TOKEN)
+
 
 def send_telegram_message(chat_id: str, text: str) -> bool:
     """Отправляет сообщения пользователю по chat_id"""

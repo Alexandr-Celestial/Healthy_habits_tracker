@@ -17,4 +17,3 @@ class HabitSerializer(serializers.ModelSerializer):
         habit = Habit(**data)
         validate_habit_fields(habit)
         return data
-

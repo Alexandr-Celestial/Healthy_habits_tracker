@@ -10,13 +10,14 @@ load_dotenv()
 
 TG_TOKEN = os.getenv("TG_TOKEN")
 
+
 class Command(BaseCommand):
     help = "Запускает Телеграм-бота"
 
     def handle(self, *args, **options):
 
         async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
-            await update.message.reply_text('Привет! Я ваш бот привычек')
+            await update.message.reply_text("Привет! Я ваш бот привычек")
 
         app = ApplicationBuilder().token(TG_TOKEN).build()
 
